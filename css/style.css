@@ -1,0 +1,384 @@
+@font-face {
+  font-family: "stsev851-78";
+  src: url("../fonts/stsev851-78.ttf")
+}
+
+@font-face {
+  font-family: "DINpro";
+  src: url("../fonts/DINPro.ttf")
+}
+
+.content-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  user-select: none;
+  font-family: "stsev851-78", serif;
+  flex-direction: column;
+  padding-top: 3vmin;
+}
+
+.bg {
+  background: url("../img/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+.page-content {
+  padding-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  height: 100%;
+  flex-flow: row wrap;
+}
+
+.my-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 20%;
+  height: 100%;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+}
+
+.my-page-header {
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 10%;
+  font-size: 20vmin;
+  color: whitesmoke;
+}
+
+.my-copyright {
+  width: 100%;
+  height: 1vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  align-self: flex-end;
+  font-size: 1.5vmin;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.59);
+  color: #FFF;
+}
+
+.cloud-container {
+  width: 40vmin;
+  height: 17vmin;
+  margin: 1vmin;
+}
+
+.cloud {
+  width: 100%;
+  height: 87%;
+  background: white;
+  border-radius: 100px;
+  position: relative;
+  margin-top: 5%;
+  box-shadow: 0 0 25px #2581b2;
+  cursor: pointer;
+}
+
+.cloud:after, .cloud:before {
+  content: '';
+  position: absolute;
+  background: white;
+  z-index: 1
+}
+
+.cloud:after {
+  width: 29%;
+  height: 80%;
+  top: -36%;
+  left: 14%;
+  border-radius: 100%;
+}
+
+.cloud:before {
+  width: 52%;
+  height: 150%;
+  top: -67%;
+  left: 34%;
+  border-radius: 100%;
+}
+
+
+.cloud:hover .cloud__text {
+  color: #308bff;
+}
+
+.cloud__text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -10%;
+  left: 0;
+  z-index: 2;
+  font-size: 4.5vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2%;
+}
+
+.sun-container {
+  margin-bottom: 10vmin;
+  height: 17vmin;
+  width: 17vmin;
+}
+
+.sun {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffe208;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 8, .5);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+  cursor: pointer;
+}
+
+.sun-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: animate-sun-text 20s linear infinite;
+  font-size: 5vmin;
+}
+
+.sun:hover .sun-text {
+  color: #308bff;
+}
+
+.sun li {
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160%;
+  height: 0.1vmin;
+  background: #ffe208;
+  box-shadow: 0 0 15px rgba(255, 255, 8, .5);
+}
+
+.sun li:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: odd-ray 2s linear infinite;
+}
+
+.sun li:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(90deg);
+  animation: odd-ray 2s linear infinite;
+}
+
+.sun li:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: odd-ray 2s linear infinite;
+}
+
+.sun li:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+  animation: odd-ray 2s linear infinite;
+}
+
+.sun li:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(22.5deg);
+  animation: even-ray 2s linear infinite;
+}
+
+.sun li:nth-child(6) {
+  transform: translate(-50%, -50%) rotate(-22.5deg);
+  animation: even-ray 2s linear infinite;
+}
+
+.sun li:nth-child(7) {
+  transform: translate(-50%, -50%) rotate(67.5deg);
+  animation: even-ray 10s linear infinite;
+}
+
+.sun li:nth-child(8) {
+  transform: translate(-50%, -50%) rotate(-67.5deg);
+  animation: even-ray 10s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-sun-text {
+  0% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes odd-ray {
+  0% {
+    width: 160%;
+  }
+  25% {
+    width: 150%;
+  }
+  50% {
+    width: 160%;
+  }
+  75% {
+    width: 170%;
+  }
+  100% {
+    width: 160%;
+  }
+}
+
+@keyframes even-ray {
+  0% {
+    width: 160%;
+  }
+  25% {
+    width: 170%;
+  }
+  50% {
+    width: 160%;
+  }
+  75% {
+    width: 150%;
+  }
+  100% {
+    width: 160%;
+  }
+}
+
+.my-viewer {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.my-viewer__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 7vmin;
+  width: 70%;
+  align-self: center;
+  margin: 12vh auto auto auto;
+}
+
+.my-viewer__content {
+  margin: 17vh auto auto auto;
+  z-index: 1;
+  width: 90%;
+  height: 65%;
+  font-size: 3.5rem;
+  padding: 3%;
+  /*background: radial-gradient(ellipse at center, #3e4059 0%,#00055a 100%);*/
+  background: white;
+  border-radius: 50vh;
+}
+
+.my-viewer__content:after, .my-viewer__content:before {
+  content: '';
+  position: absolute;
+  background: white;
+  z-index: -1
+}
+
+.my-viewer__content:after {
+  width: 28%;
+  height: 45%;
+  top: 14%;
+  left: 19%;
+  border-radius: 100%;
+}
+
+.my-viewer__content:before {
+  width: 43%;
+  height: 73%;
+  top: 3%;
+  left: 38%;
+  border-radius: 100%;
+}
+
+.my-viewer__body {
+  width: 100%;
+  height: 140%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -30%;
+}
+
+.my-viewer__control {
+  width: 16%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-viewer__info {
+  width: 68%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vmin 3vmin 1vmin;
+}
+
+
+.my-hide {
+  opacity: 0;
+  cursor: default;
+  z-index: -99;
+}
+
+img {
+  max-width: 100%;
+}
